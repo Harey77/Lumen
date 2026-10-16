@@ -1,0 +1,19 @@
+{
+  "name": "lumen",
+  "private": true,
+  "packageManager": "pnpm@12.11.2",
+  "scripts": {
+    "dev": "corepack pnpm --filter @lumen/web dev",
+    "build": "corepack pnpm --filter @lumen/web build",
+    "preview": "corepack pnpm --filter @lumen/web preview",
+    "typecheck": "corepack pnpm --filter @lumen/web typecheck",
+    "lint": "corepack pnpm --filter @lumen/web lint",
+    "test": "corepack pnpm --filter @lumen/web test",
+    "e2e": "corepack pnpm --filter @lumen/web e2e",
+    "start": "corepack pnpm --filter @lumen/web start",
+    "dev:server": "corepack pnpm --filter @lumen/web dev:server"
+  },
+  "devDependencies": {
+    "@playwright/cli": "^0.1.22"
+  }
+}

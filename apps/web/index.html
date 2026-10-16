@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Lumen: an offline-first learning environment that adapts when a concept gets hard." />
+    <meta name="theme-color" content="#0b0d17" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <title>Lumen</title>
+    <script>
+      // Set the theme before first paint to avoid a flash of the wrong theme.
+      (function () {
+        // Midnight is the default; a saved choice (light, dark or system) wins.
+        var t = 'dark', m = 'system'
+        try { t = localStorage.getItem('lumen.theme') || 'dark'; m = (JSON.parse(localStorage.getItem('lumen.prefs') || '{}').motion) || 'system' } catch (e) {}
+        if (t === 'system') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        document.documentElement.dataset.theme = t
+        if (m === 'reduce') document.documentElement.dataset.motion = 'reduce'
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Lumen needs JavaScript to run its lessons on your device.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
